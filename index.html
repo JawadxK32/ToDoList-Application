@@ -1,0 +1,52 @@
+<!Doctype HTML>
+<html ng-app="todoApp">
+  <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" title="Bootstrap" charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="scripts/todo.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+      <header>
+          <h1>TodoList Application</h1>
+      </header>
+    <h3>Todo List:</h3>
+    <div ng-controller="TodoListController as todoList">
+      <section class="add-section">
+      <form ng-submit="todoList.filter()">
+        <section class="title-bar">
+        <input type="text" ng-model="todoList.todoText"  size="30" placeholder="put title here" class="title">
+        <input class="btn-primary add-button" type="submit" value="add">
+      </section>
+        <textarea ng-model="todoList.todoDesc"  size="30"
+               placeholder="description here" class="description"></textarea>
+      </form>
+    </section>
+      <section class="list">
+      <h3>Current Tasks</h3>
+        <div ng-repeat="todo in todoList.todos | filter:{done: false}" class="task">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}} task-title">{{todo.text}}</span>
+          <input type="button" value="delete" ng-click="todo.delete = true;todoList.delete()"><br>
+          <span class="done-{{todo.done}} task-description">{{todo.description}}</span>
+        </div>
+      </section>
+
+      <section class="list">
+      <h3>Completed Tasks</h3>
+        <div ng-repeat="todo in todoList.todos | filter:{done: true}" class="task">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}} task-title-done">{{todo.text}}</span>
+          <input type="button" value="delete" ng-click="todo.delete = true;todoList.delete()"><br>
+          <span class="done-{{todo.done}} task-description">{{todo.description}}</span>
+        </div>
+      </section>
+    </div><br><br>
+      <section class="sideBar">
+          <div id="drop_zone" ondrop="drop_handler(event);" ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
+              Drop a file here
+          </div>
+      </section>
+      <script src="js/dragDrop.js"></script>
+  </body>
+</html>

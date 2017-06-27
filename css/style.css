@@ -1,0 +1,130 @@
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  background-image:url("http://www.freedesigns.me/wp/smarthost/wp-content/uploads/2013/07/508ba1480284c-2306.jpg");
+}
+
+.sideBar article{
+  width: 75%;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+
+header{
+  background-color: #282c34;
+  color: #ffffff;
+}
+
+header h1{
+  font-size: 20px;
+  text-align: center;
+}
+
+ul{
+    color:black;
+}
+.sideBar {
+  float:left;
+  width: 50vw;
+}
+
+#drop_zone {
+  border-radius: 25px;
+  width:  300px;
+  height: 300px;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 10px;
+  margin: 0 auto;
+}
+
+h3{
+    color:white;
+}
+
+.row::after{
+  content:"";
+  clear: both;
+  display: table;
+}
+
+.add-section{
+  width: 50%;
+  max-width: 400px;
+
+}
+
+.add-section .title-bar{
+  width: 100%;
+  float:right;
+}
+
+.add-section .title{
+  width:75%;
+  float: right;
+
+}
+
+.add-section .add-button{
+  width:25%;
+  float:right;
+
+}
+
+.add-section .description{
+  width: 100%;
+  min-height: 100px;
+  resize: none;
+  float:right;
+
+}
+
+.add-section::after{
+  content:"";
+  clear: both;
+  display: table;
+
+}
+
+
+.list{
+  max-width: 400px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  width: 50%;
+  float: right;
+
+}
+
+.task{
+  margin-bottom: 20px;
+}
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.task-title{
+  color: blue;
+}
+
+.task-title-done{
+  color: red;
+}
+
+.task-description{
+  font-style: italic
+}
+
+@media (max-width: 800px){
+  .list{
+    width: 100%;
+  }
+  .add-section{
+    width: 100%;
+  }
+}
