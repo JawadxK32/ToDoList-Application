@@ -2,13 +2,13 @@
 <html ng-app="todoApp">
   <head>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" title="Bootstrap" charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-    <script src="scripts/todo.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+      <script src="scripts/todo.js"></script>
+      <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
       <header>
-          <h1>TodoList Application</h1>
+        <h1>TodoList Application</h1>
       </header>
     <h3>Todo List:</h3>
     <div ng-controller="TodoListController as todoList">
@@ -19,7 +19,7 @@
         <input class="btn-primary add-button" type="submit" value="add">
       </section>
         <textarea ng-model="todoList.todoDesc"  size="30"
-               placeholder="description here" class="description"></textarea>
+         placeholder="description here" class="description"></textarea>
       </form>
     </section>
       <section class="list">
@@ -31,7 +31,6 @@
           <span class="done-{{todo.done}} task-description">{{todo.description}}</span>
         </div>
       </section>
-
       <section class="list">
       <h3>Completed Tasks</h3>
         <div ng-repeat="todo in todoList.todos | filter:{done: true}" class="task">
@@ -44,7 +43,7 @@
     </div><br><br>
       <section class="sideBar">
           <div id="drop_zone" ondrop="drop_handler(event);" ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
-              Drop a file here
+              Drag & Drop a List(.txt) HERE
           </div>
       </section>
       <script src="js/dragDrop.js"></script>
